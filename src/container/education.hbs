@@ -1,0 +1,43 @@
+{{!-- 
+Це код container файлу для education сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{#with main}}    
+        <main>
+            <section>
+                {{> title data="My education" big=true}}
+                <ul>
+                      {{#each education}}
+                        <li>
+                            {{this}}
+                            {{#unless isEnd}} (навчалась) {{/unless}}
+
+                            {{#if point fols=true}} (yt d) {{/if}}
+                        </li>
+                    {{/each}}      
+                </ul>
+            </section>
+
+            <sektion>
+                {{> title data="My certificates"}}
+                <ul>
+                    {{#each certificates}}
+                     <li>
+                        {{this}}
+                        
+                        ( {{id}} )
+                          
+                     </li>
+                    {{/each}} 
+                </ul>
+            </sektion>
+        </main>
+    {{/with}}
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
