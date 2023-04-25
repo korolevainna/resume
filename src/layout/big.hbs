@@ -7,26 +7,17 @@
 
   <head>
     <title>
-      {{page.title}}
+      Bio page
     </title>
     <meta charset='utf-8' />
     <link href='css/index.css' rel='stylesheet' />
   </head>
 
   <body>
-    {{> naw}}
-    
-    <br>
-    <hr>
+   
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
     {{{body}}}
 
-    <br>
-    <hr>
-
-    {{#with footer}}
-      {{> footer}}
-    {{/with}}
   </body>
 
 </html>
