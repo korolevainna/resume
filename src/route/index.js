@@ -498,6 +498,7 @@ router.get('/js', function (req, res) {
       },
     ],
   })
+  res.render('index', {js})
   //                  ↑↑ сюди вводимо JSON дані
 })
 
