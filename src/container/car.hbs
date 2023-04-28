@@ -4,6 +4,80 @@
 --}}
 
 <div>
+<<<<<<< HEAD
+    <section>
+        <p>make: {{make}}</p>  
+        <p>madel: {{model}}</p>  
+        <p>year: {{year}}</p>
+        <p>color: {{color}}</p>
+        {{#each features}} {{/each}}
+          {{#each interior}} {{/each}}
+          
+       
+        <br>
+            <p>seats</p>
+                <ul class="seats">
+                <li class="material">material: {{material}}</li>
+                <li class="color">color</li>
+                <li class="heated">heated</li>
+                <li class="ventilated">ventilated</li>
+
+                 <hr>
+           <p>dashboard</p>
+           {{#with dashboard}}
+            <p> dashboard {{material}},{{color}},{{display}}</p>
+           {{/with}}
+             <p>display</p>
+                <br>
+                <p>type: {{type}}</p>
+                <p>size: {{size}}</p>
+                <p>resolution: {{resolution}}</p>
+                <p>touchscreen: {{touchscreen}}</p>
+
+        <br>
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">audio</th>
+                <th scope="col">systemt</th>
+                <th scope="col">speakers</th>
+                <th scope="col">subwoofer</th>
+                <th scope="col">bluetooth</th>
+                <th scope="col">USB</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">1</th>
+                <td>JBL</td>
+                <td>8</td>
+                <td>true</td>
+                <td>true</td>
+                <td>true</td>
+                </tr>
+            </tbody> 
+            </table> 
+        <hr>
+        </ul>
+
+    </section>  
+    <section>
+        <h1>exterior</h1>
+        {{#with exterior}}        {{/with}}
+            <nav wheels-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">size</a></li>
+            <li class="breadcrumb-item"><a href="#">type</a></li>
+            <li class="breadcrumb-item active" aria-current="page">color</li>
+            </ol>
+            </nav>
+
+    </section>
+    <br>
+    {{#each price}}{{/each}}
+       <p>base: {{base}}</p>
+=======
     {{#with person}}
     <div>
         <h1>
@@ -59,6 +133,7 @@
          {{/each}}
      </div>
     {{/with}}
+>>>>>>> d3251768215325e169ae9f9b16e0e7c6def0b496
 </div>
 
 {{!-- 
