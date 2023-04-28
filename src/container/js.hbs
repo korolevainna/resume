@@ -6,7 +6,7 @@
 <div>
     <section>
         {{> title data="My js" big=true}}
-        <p>name: {{name}}</p>
+        <h1>name: {{name}}</h1>
         <p>description: {{description}}</p>
         <br>
         <h1>history</h1>
@@ -14,7 +14,15 @@
         <p> {{year}},{{founder}}</p>
         {{/with}}
         <br>
-        <li>types: {{types}} </li>
+        <h2>types</h2>
+        <button type="button" class="btn btn-outline-number">Number</button>
+        <button type="button" class="btn btn-outline-string">String</button>
+        <button type="button" class="btn btn-outline-boolean">Boolean</button>
+        <button type="button" class="btn btn-outline-null">Null</button>
+        <button type="button" class="btn btn-outline-undefined">Undefined</button>
+        <button type="button" class="btn btn-outline-symbol">Symbol</button>
+        <button type="button" class="btn btn-outline-object">Object</button>
+        
         <br>
         <h1>syntax</h1>
         {{#with syntax}}
@@ -25,9 +33,24 @@
             <p>classes: {{classes}}</p>
         {{/with}}
         <br>
-        <p>features: {{features}}</p>
+        <h1>features</h1>
+        <button type="button" class="btn btn-secondary" disabled>First-class functions</button>
+        <button type="button" class="btn btn-secondary" disabled>Closures</button>
+        <button type="button" class="btn btn-secondary" disabled>Dynamic typing</button>
+        <button type="button" class="btn btn-secondary" disabled>Prototype-based inheritance</button>
+        <button type="button" class="btn btn-secondary" disabled>Asynchronous programming with Promises and async/await</button>
+        <button type="button" class="btn btn-secondary" disabled>Modules with import/export statements</button>
         <br>
-        <p>libraries: {{libraries:}}</p>
+        <h1>libraries: </h1>
+        <button type="button" class="btn btn-outline-jQuery">jQuery</button>
+        <button type="button" class="btn btn-outline-React">React</button>
+        <button type="button" class="btn btn-outline-Angular">Angular</button>
+        <button type="button" class="btn btn-outline-Vue">Vue</button>
+        <button type="button" class="btn btn-outline-Node.js">Node.js</button>
+        <button type="button" class="btn btn-outline-Express.js">Express.js</button>
+        <button type="button" class="btn btn-outline-Lodash">Lodash</button>
+        <button type="button" class="btn btn-outline-Moment.js">Moment.js</button>
+
         <br>
         <p>tools: {{tools}}</p>
         <br>
