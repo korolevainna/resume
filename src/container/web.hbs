@@ -1,0 +1,47 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{#with web}}
+    <div>
+        <section>
+           {{> title data="Web languages" big=true}} 
+
+           {{#each languages}}
+     
+                <p>name: {{name}}</p>
+                <p>version: {{version}}</p>
+                <p>description: {{description}}</p>
+
+                <br>
+                <h2>elements</h2>
+                {{#each elements}}
+                <p> name: {{name}}</p>
+                <p>description: {{description}}</p>
+                {{/each}}
+                {{#each  attributes }}
+                <p> attributes: {{name:}}{{description}}{{description}}</p>
+                {{/each}}
+                <br>
+                    <h2>functions</h2>
+                    {{#each functions}}
+                    <p>functions:{{name}}{{description}}</p>
+                    {{/each}}
+                    <br>
+                    <h2>parameters</h2>
+                    <p>name: {{name}}</p>
+                    <p> type: {{ type}}</p>
+                    <p>description: {{description}}</p>
+
+            {{/each}} 
+        </section>
+    </div>
+    {{/with}}
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
