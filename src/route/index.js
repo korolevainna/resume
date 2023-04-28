@@ -170,7 +170,7 @@ router.get('/education', function (req, res) {
 //              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/work', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-  res.render('work',{
+  res.render('work',{layout: `big`,
     // ↙ сюди вводимо JSON дані
 
     layout: `big`,
@@ -422,7 +422,7 @@ router.get('/program', function (req, res) {
 
 // ================================================================
 
-<<<<<<< HEAD
+ HEAD
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -635,8 +635,6 @@ router.get('/web', function (req, res) {
 // ================================================================
 
 
-<<<<<<< HEAD
-// ================================================================
 
 // router.get Створює нам один ентпоїнт
 
@@ -652,7 +650,5 @@ router.get('bootstrap', function (req, res) {
 })
 
 // ================================================================
-=======
->>>>>>> 02a05ed10e6ce3d530d167b671d1266c89e0f0cf
->>>>>>> 1072bfe705ff3015d231303bfac93ec3c3962b6f
+
 
