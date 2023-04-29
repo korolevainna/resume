@@ -1,0 +1,67 @@
+{{!-- 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    
+        <div>
+                <h2>name: {{name}}</h2>
+                <p>description: {{description}}</p>
+                <p>price: {{price}}</p>
+                <p>category: {{category}}</p>
+                <br>
+                <li> feature </li>
+                 
+                    <button type="button" class="btn">processor</button>
+                     <hr>
+                       <div>brand: {{brand}}</div>
+                       <p>model: {{model}}</p>
+                       <a>speed: {{speed}}</a>
+                       <p>cores: {{cores}}</p>
+                       <p>cache: {{cache}}</p>
+                       <br>
+                    <button type="button" class="btn">memory</button>
+                       <p>memory: {{type}}, {{size}} , {{speed}}</p>
+                       <br>
+                       <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="size">display</a></li>
+                            <li class="breadcrumb-item"><a href="size">size</a></li>
+                            <li class="breadcrumb-item " aria-current="page">resolution</li>
+                            <li class="breadcrumb-item"><a href="technology">technology</a></li>
+                            <li class="breadcrumb-item"><a href="color_space">color_space</a></li>
+                            <p>brightness: {{brightness}} </p>
+                            <p>refresh_rate: {{refresh_rate}}</p>
+                            </ol>
+                        </nav>
+                        <br>
+                        <h3>graphics</h3>
+                        {{#each graphics}}
+                          <p>brand: {{brand}}</p>
+                          <p>model: {{model}}</p>
+                          <p>memory: {{memory}}</p>
+                        {{/each}}
+
+                        <br>
+                        <nav style="--bs-breadcrumb-divider: 'dimensions';" aria-label="dimensions">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="height">height</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">width</li>
+                            <li class="breadcrumb-item active" aria-current="page">depth</li>
+                        </ol>
+                        </nav>
+
+                        <hr>
+                        <p>battery: {{type}},{{capacity}},{{life}}</p>
+
+                        {{#each accessories}}
+                        <p>accessories: {{name}},{{price}}</p>
+                        {{/each}}
+        </div>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
