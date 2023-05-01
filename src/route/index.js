@@ -138,7 +138,7 @@ router.get('/education', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('education', {
     // ↙ сюди вводимо JSON дані
-
+    
     page: {  
      title: `Resume | Education`,
     },
@@ -517,6 +517,7 @@ router.get('/car', function (req, res) {
       total: 28990,
     },
   })
+  res.render('index', {car})
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -744,6 +745,7 @@ router.get('bootstrap', function (req, res) {
   res.render('bootstrap', {
     layout: `bootstrap`,
   })
+  res.render('index', {bootstrap})
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -905,7 +907,9 @@ router.get('/facebook', function (req, res) {
       },
     ],
   })
+  res.render('index', {facebook})
   //                  ↑↑ сюди вводимо JSON дані
 })
 
 // ================================================================
+ module.exports = router
