@@ -455,7 +455,7 @@ router.get('/car', function (req, res) {
         },
         audio: {
           system: 'JBL',
-          speakers: 8,
+          speakers: 88,
           subwoofer: true,
           bluetooth: true,
           USB: true,
@@ -520,12 +520,13 @@ router.get('/car', function (req, res) {
       total: 28990,
     },
   })
+  res.render('index', {car})
   //                  ↑↑ сюди вводимо JSON дані
 })
 
 // ================================================================
 
- HEAD
+ //HEAD
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -754,4 +755,4 @@ router.get('bootstrap', function (req, res) {
 
 // ================================================================
 
-d3251768215325e169ae9f9b16e0e7c6def0b496
+
