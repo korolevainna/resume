@@ -916,7 +916,6 @@ router.get('/task21', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-module.exports = router
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -971,7 +970,7 @@ router.get('/task22', function (req, res) {
           sub_title: 'Check out our requirements',
           detail: {
             text: 'By using or accessing the service, you agree to be bound by the terms and conditions outlined in the agreement.',
-            button: 'Аccept',
+            button: 'Accept',
           },
         },
       },
@@ -981,5 +980,17 @@ router.get('/task22', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-module.exports = router
 // ================================================================
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('bootstrap4', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('index', {bootstrap4})
+  //                  ↑↑ сюди вводимо JSON дані
+})
+// ================================================================
+module.exports = router
