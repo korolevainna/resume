@@ -420,8 +420,6 @@ router.get('/program', function (req, res) {
 
 // ================================================================
 
-// ================================================================ HEAD
-
 // router.get Створює нам один ентпоїнт
 
 router.get('/car', function (req, res) {
@@ -525,9 +523,6 @@ router.get('/car', function (req, res) {
 })
 
 // ================================================================
-// HEAD
-
- //HEAD
 
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -740,12 +735,10 @@ router.get('/web', function (req, res) {
 
 // ================================================================
 
-
-
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('bootstrap', function (req, res) {
+router.get('/bootstrap', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
@@ -893,7 +886,7 @@ router.get('/task21', function (req, res) {
         title: 'Outdated HTML tags',
         text: 'tags that have been identified as deprecated and not recommended for use in HTML version 5',
         button: {
-          text: 'Орen',
+          text: 'Open',
         },
       },
       header_text: 'Sections',
