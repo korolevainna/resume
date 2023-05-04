@@ -2,14 +2,12 @@
 Це код container файлу для task21 сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
-
 <div>
-    {{#with main}} 
       <main>
         <section>
             {{> title data="My heading" big=true}}
             <h1>heading</h1>
-              <p>title: {{title:}}</p>
+              <p>title: {{title}}</p>
               <p>text: {{text}}</p>
               <hr>
               <button type="button" class="btn btn-primary">Open page</button>
@@ -18,7 +16,7 @@
 
               <hr>
               <h2>second</h2>
-                <p>title: {{title:}}</p>
+                <p>title: {{title}}</p>
                 <p>text: {{text}}</p>
                  <button type="button" class="btn btn-secondary">Open page</button>
                  <button type="button" class="btn btn-outline-secondary">Add to cart</button>
@@ -31,7 +29,7 @@
                    <button type="button" class="btn btn-outline-dark">Add to cart</button>
         </section> 
         <section>
-            <hr>
+            <br>
             <h1>nested_display</h1>
                <p>title: {{title}}</p>
                {{#each children_display}}
@@ -52,12 +50,11 @@
               <button type="button" class="btn btn-outline-light">https://google.com</button>
               <hr>
               <p>list_name: {{text}}{{url}}</p>
-
             {{/each}}
         </section>
-      </main>     
-    {{/with}}
+      </main>    
 </div>
+
 
 {{!-- 
     Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
