@@ -5,29 +5,29 @@
         <p>year: {{year}}</p>
         <p>color: {{color}}</p>
         {{#each features}} {{/each}}
-          {{#each interior}} {{/each}}
+          {{#each interior}} 
           
        
         <br>
             <p>seats</p>
                 <ul class="seats">
-                <li class="material">material: {{material}}</li>
+                <li class="material">material {{material}}</li>
                 <li class="color">color</li>
                 <li class="heated">heated</li>
                 <li class="ventilated">ventilated</li>
-
+            {{/each}}
                  <hr>
            <p>dashboard</p>
            {{#with dashboard}}
-            <p> dashboard {{material}},{{color}},{{display}}</p>
-           {{/with}}
+            <p> dashboard: {{material}},{{color}},{{display}}</p>
+           
              <p>display</p>
                 <br>
                 <p>type: {{type}}</p>
                 <p>size: {{size}}</p>
                 <p>resolution: {{resolution}}</p>
                 <p>touchscreen: {{touchscreen}}</p>
-
+            {{/with}}
         <br>
             <table class="table">
             <thead>
@@ -65,66 +65,8 @@
             <li class="breadcrumb-item"><a href="#">type</a></li>
             <li class="breadcrumb-item active" aria-current="page">color</li>
             </ol>
-         {{/with}}   </nav>
+            </nav>
+         {{/with}}   
 
-    </section>
-    <br>
-    {{#each price}}{{/each}}
-       <p>base: {{base}}</p>
-
-    {{#with person}}
-    <div>
-        <h1>
-           {{name}}
-        </h1>
-        <p>age: {{age}}</p>
-        <p>gender: {{gender}}</p>
-        <br>
-        {{#with address}}
-        <p> address:{{street}}, {{city}}, {{state}}, {{zip}}, {{country}}</p>
-    {{/with}}
-    </div>
-    <br>
-       <h2> education</h2>
-        {{#each education}}
-        <p> Degree: {{degree}}</p>
-        <p>major: {{major}}</p>
-        <p>university: {{university}} ({{graduationYear}})</p>
-        {{/each}}
-     
-    <br>
-    <h3>workExperience</h3>
-        {{#each workExperience}}
-        <p>company:{{company}} </p>
-        <p>title:{{title}}</p>
-        <p>({{startDate}} -{{endDate}})</p>
-         <p> {{responsibilities}} </p>
-         <br>
-         <p>year_founded:{{year_founded}}</p>
-         <p>industry:{{industry}}</p>
-         <br>
-         {{#each employees}}
-            <p>name:{{name}}</p>
-            <p>position:{{position}}</p>
-            <p>department:{{department}}</p>
-
-                {{#each projects}}
-                <p> projects: {{name}},{{description}},{{status}}</p>
-                {{/each}}
-
-                <br>
-                {{#each teams}}
-                <h2>teams</h2>
-                    <p>name:{{team_name}}</p>
-                    <p>{{team_leader.name}}({{team_leader.title}})</p>
-                    <a href={{team_leader.email}}></a>
-                <br>
-                   <p>skills:{{skills}}</p>
-                   <hr>
-                   <p>projects:{{projects}}</p>
-                {{/each}}
-            {{/each}}
-         {{/each}}
-     </div>
-    {{/with}}
+    </section> 
 </div>
