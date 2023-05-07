@@ -18,69 +18,26 @@
         </div>
     </div>
 </main>
-            <h1 class="text-center">Latest News</h1>
 
  <main class="p-5">
     <div class="rov g-2 mt-5">
-        <div "col-12"> 
-             <div class="col-3 mb-3">
-                    <div class="alert alert-dark text-bg-dark">
-                        <h6 class="m-1">
-                           <h5> COVID-19 Vaccinations Begin in Europe</h5> 
-                         <button class="btn btn-success rounded-pill mi-3">true</button>
-                         <button class="btn btn-danger rounded-pill mi-3">true</button>
-                            As the world continues to grapple with the ongoing COVID-19 pandemic, Europe begins its vaccination rollout, with healthcare workers and the elderly among the first to receive the vaccine.
-                         </h6>
-                    </div>
-                    <div class="alert alert-dark text-bg-dark">
-                          <h6 class="m-1">
-                            <h5>Tesla Stock Surges After Record Sales</h5>
-                         <button class="btn btn-danger rounded-pill mi-3">false</button>
-                           Tesla's stock price jumps 10% following the company's announcement of record sales in the last quarter, thanks in part to strong demand for its electric vehicles
-                         </h6>
-                      </div> 
-                       <div class="alert alert-dark text-bg-dark"> 
-                          <h6 class="m-0">
-                           <h5> New Study Shows Benefits of Meditation for Mental Health</h5>
-                            A new study published in the Journal of the American Medical Association finds that practicing mindfulness meditation can lead to improved mental health outcomes for people struggling with depression and anxiety.
-                         </h6>
-                         </div>
-                        <div class="alert alert-dark text-bg-dark">
-                          <h6 class="m-0">
-                            <h5>NASA Launches New Mars Rover</h5>
-                            NASA's Perseverance rover successfully launches on a mission to explore Mars, with the goal of collecting samples of the planet's surface and searching for signs of ancient microbial life.
-                         </h6>
-                        </div>
-                        <div class="alert alert-dark text-bg-dark">
-                            <h6 class="m-0">
-                              <h5>GameStop Shares Soar as Reddit Traders Rally</h5>
-                              Shares of GameStop surge as amateur traders on the social media platform Reddit rally to drive up the price, in what some are calling a battle between Wall Street and Main Street.
-                          </h6>
-                        </div>
-                        <div class="alert alert-dark text-bg-dark">
-                            <h6 class="m-0">
-                              <h5>UK Announces Plan to Ban Sale of Gas-Powered Cars by 2030</h5>
-                              In an effort to combat climate change, the UK government announces a plan to ban the sale of new gas-powered cars and vans by 2030, with hybrid vehicles to follow in 2035.
-                          </h6>
-                         </div>
-                         <div class="alert alert-dark text-bg-dark">
-                            <h6 class="m-0">
-                             <h5> New Study Shows Link Between Exercise and Longevity</h5>
-                          <button class="btn btn-success rounded-pill mi-3">false</button>
-                              A new study published in the Journal of the American Medical Association suggests that regular exercise can help people live longer, with participants who exercised regularly having a lower risk of premature death.
-                          </h6>
-                         </div>
-                         <div class="alert alert-dark text-bg-dark">
-                            <h6 class="m-0">
-                              <h5>Amazon Expands Grocery Delivery Service</h5>
-                              <button class="btn btn-success rounded-pill mi-3">false</button>
-                              Amazon announces an expansion of its grocery delivery service, with plans to offer free delivery to Prime members on orders over $35 and to expand its selection of fresh and organic produce.
-                          </h6>
-                     </div>
-             </div>    
-         </div> 
-     </div>
- </main>  
+        {{#with news blok}}
+         <h3 class="text-center">{{title}}</h3>
+          {{#each cards}} 
+             <div class="card col-3 text-bg-secondary  g-1">
+                {{#if isTop}}
+                    <div class="bange text-success rounded-pill text-uppercase"></div>
+                {{/if}} 
+                {{#if isNew}}   
+                   <div class="bange text-success rounded-pill text-uppercase"></div>
+                {{/if}}
+                <h5>{{title}}</h5>
+                <p>{{description}}</p>
+             </div>
+           {{/each}}
+        {{/with}}
+    </div>
+ </main>    
 
 
  <main class="p-5">
