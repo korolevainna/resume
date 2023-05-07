@@ -10,9 +10,10 @@
               <p>title: {{title}}</p>
               <p>text: {{text}}</p>
               <hr>
+               {{#each button_text}}
               <button type="button" class="btn btn-primary">Open page</button>
               <button type="button" class="btn btn-outline-primary">Add to cart</button>
-              {{#each button_text}} {{/each}}
+              {{/each}}
 
               <hr>
               <h2>second</h2>
@@ -34,11 +35,11 @@
                <p>title: {{title}}</p>
                {{#each children_display}}
                <p>{{title}}{{text}}</p>
-               {{/each}}
                <button type="button" class="btn btn-warning">Open</button>
                <hr>
                <h6>header_text</h6>
                <button type="button" class="btn btn-info">Learn more</button>
+                {{/each}}
         </section>
 
         <section>
