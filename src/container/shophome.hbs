@@ -1,0 +1,131 @@
+
+<main class="p-5">
+    <div class="rov g-2">
+        <div class="col-4">
+            <div class="col-12 mb-5">
+               <div class="nav nav-tabs">
+                    <div class="nav-item">
+                         <a href="https://github.com/" class="nav-link active">Home</a>
+                    </div> 
+                    <div class="nav-item">
+                            <a href="https://www.google.com/" class="nav-link active">Contacts</a>
+                    </div>
+                        <div class="nav-item">
+                            <a href="https://www.youtube.com/" class="nav-link disabled">Help</a>
+                        </div>   
+                 </div>  
+            </div>
+        </div>
+    </div>
+</main>
+
+ <main class="p-5">
+    <div class="rov g-2 mt-5">
+        {{#with newsBlok}}
+         <h3 class="text-center">{{title}}</h3>
+          {{#each cards}} 
+             <div class="card col-3 text-bg-secondary  g-1">
+                {{#if isTop}}
+                    <div class="bange text-success rounded-pill text-uppercase"></div>
+                {{/if}} 
+                {{#if isNew}}   
+                   <div class="bange text-success rounded-pill text-uppercase"></div>
+                {{/if}}
+                <h5>{{title}}</h5>
+                <p>{{description}}</p>
+             </div>
+           {{/each}}
+        {{/with}}
+    </div>
+ </main>    
+
+
+ <main class="p-5">
+    <div class="rov g-2">
+        <div class="col-4">
+             <div class="col-12 mb-5">
+                <div class="nav nav-tabs">
+                         <div class="nav-item">
+                                    <a href="#" class="nav-link active">Electronics</a>
+                         </div> 
+                        <div class="nav-item">
+                             <a href="#" class="nav-link disabled">Home & Kitchen</a>
+                        </div>
+                         <div class="nav-item">
+                                <a href="#" class="nav-link disabled">Clothing & Accessories</a>
+                         </div> 
+                         <div class="nav-item">
+                             <a href="#" class="nav-link disabled">Toys & Games</a>
+                         </div>     
+                 </div> 
+             </div>
+        </div>               
+    </div>
+ </main>  
+
+<main class="p-5">
+    <div class="row-12 gy-2 gx-2">
+     <section class="col-4">
+        <div class="card text-br-dark">
+            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product photo">
+            <div class="card-body">
+                <h5 class="card-title text-bg-primary">iPhone 13</h5>
+                <span class="badge text-bg-warning rounded-pill text-uppercose">false</span>
+                <span class="badge text-bg-info rounded-pill text-uppercose">false</span>
+                <p class="text-br-secondary">The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.</p>
+                <a href="#" class="btn btn-primary">Open</a>
+            </div>
+        </div>
+        <div class="card text-br-dark">
+            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product photo">
+            <div class="card-body">
+                <h5 class="card-title text-bg-primary">MacBook Pro</h5>
+                <p class="text-br-secondary">Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.</p>
+                <a href="#" class="btn btn-primary">Open</a>
+            </div>
+        </div>
+        <div class="card text-br-dark">
+            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product photo">
+            <div class="card-body">
+                <h5 class="card-title text-bg-primary">AirPods Pro</h5>
+                <p class="text-br-secondary">Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.</p>
+            </div>
+            <div class="card text-br-dark">
+            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product photo">
+            <div class="card-body">
+                <h5 class="card-title text-bg-primary">Sony Bravia XR A90J</h5>
+                <p class="text-br-secondary">This OLED TV boasts a 4K resolution, HDR support, and a high refresh rate for smooth motion handling.</p>
+            </div>
+        </div>
+        <div class="card text-br-dark">
+            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product photo">
+            <div class="card-body">
+                <h5 class="card-title text-bg-primary">Nintendo Switch OLED Model</h5>
+                <span class="badge text-bg-info rounded-pill text-uppercose">false</span>
+                <p class="text-br-secondary">The latest iteration of the popular gaming console features a larger OLED screen and improved audio quality.</p>
+            </div>
+        </div>
+        <div class="card text-br-dark">
+            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product photo">
+            <div class="card-body">
+                <h5 class="card-title text-bg-primary">Bose SoundLink Revolve+</h5>
+                <span class="badge text-bg-warning rounded-pill text-uppercose">true</span>
+                <p class="text-br-secondary">This portable Bluetooth speaker features 360-degree sound, water-resistant construction, and up to 16 hours of battery life.</p>
+            </div>
+        </div>
+      </section>
+    </div>
+</main>
+
+
+<main>
+      <div class="card text-br-dark">
+            <div class="alert alert-dark text-bg-dark">
+                <h5 class="card-title text-bg-dark">Unlock Premium Content</h5>
+                <p class="text-br-secondary">Subscribe to access exclusive content and features.</p>
+                <a href="https://www.youtube.com/" class="btn btn-primary">Register Now</a>
+                <a href="https://www.youtube.com/" class="btn btn-primary">Buy Subscription</a>
+            </div>
+        </div>
+</main>
+ 
