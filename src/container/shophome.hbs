@@ -1,27 +1,31 @@
 
-<main class="p-5">
-    <div class="rov g-2">
-        <div class="col-4">
+<main class="m-4">
+    <div class="col-12">
+        {{#with navigation}}
+        <div class="card m-0">
             <div class="col-12 mb-5">
-               <div class="nav nav-tabs">
-                    <div class="nav-item">
+               <ul class="nav">
+                   {{#each links}}
+                    <li class="nav-item">
                          <a href="https://github.com/" class="nav-link active">Home</a>
-                    </div> 
-                    <div class="nav-item">
+                    </li> 
+                    <li class="nav-item">
                             <a href="https://www.google.com/" class="nav-link active">Contacts</a>
-                    </div>
-                        <div class="nav-item">
+                    </li>
+                        <li class="nav-item">
                             <a href="https://www.youtube.com/" class="nav-link disabled">Help</a>
-                        </div>   
-                 </div>  
+                        </li> 
+                     {{/each}}     
+                 </ul>     
             </div>
         </div>
+        {{/with}} 
     </div>
 </main>
 
  <main class="p-5">
     <div class="rov g-2 mt-5">
-        {{#with news blok}}
+        {{#with newsBlok}}
          <h3 class="text-center">{{title}}</h3>
           {{#each cards}} 
              <div class="card col-3 text-bg-secondary  g-1">
