@@ -1,0 +1,127 @@
+{{!-- 
+Це код container файлу для task21 сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<main  class="p-5">
+   {{#with navigation}} 
+    <div class="rov g-2">
+        <div class="col-6">
+            <div class="col-12 mb-3">
+               <div class="nav nav-tabs">
+                 {{#each links}}
+                    <div class="nav-item">
+                         <a href={{href}} class="nav-link active"> {{text}} </a>
+                   </div>
+                   {{/each}}     
+                 </div>  
+            </div>
+        </div>
+     </div>    
+    {{/with}}
+
+    <h1>{{header}}</h1>
+    {{#with contacts_data}}
+     <h2>{{title}}</h2>
+        <div class="rov g-6">
+            <div class="col-6">
+             <div class="col-12 mb-3">
+               <div class="btn btn-tabs">
+                {{#each buttons}}
+                    <div class="btn btn-warning">
+                        <a isPrimary{{isPrimary}} isOutline{{isOutline}} class="text-uppercase"> {{text}}</a>
+                    </div>
+                {{/each}}
+                </div>
+            </div> 
+          </div> 
+        </div>     
+    
+
+    <div class="row g-8">
+        <div class="col-4 ">
+               <div class="form">
+                  {{#each form.input}}
+				<div class="col-12 mb-2">
+					<label class="form-label">{{label}}</label>  
+					<select class="form-control form-control-lg"><option>{{placeholder}}</option> </select>
+					<div class="form-text form-select-ln">{{caption}}</div>
+				 </div>	
+				 {{/each}}  
+
+				 
+				 {{#each form.switch}}
+				 <div class="col-12 mb-2">
+					<div class="form-check form-switch">
+						<label class="form-check-label">{{text}}</label>
+						<input name="{{isActive}}" type="checkbox" class="form-check-input">
+					</div>
+				</div>
+				 {{/each}}
+              </div>    
+         </div>
+     </div>
+   </div> 
+ {{/with}} 
+
+
+<div class="card col-4 mb-3">
+	<div class="row g-1">
+		<div class="col-12">
+		<div class="btn">
+			<btn  class="btn btn-success mb=1"> {{action_block.[0].text}}</btn>
+			<btn  class="btn btn-danger mb-1"> {{action_block.[1].text}}</btn>
+			<btn  class="btn btn-info"> {{action_block.[2].text}}</btn>	
+		</div>	
+	</div>    
+ </div> 
+
+       
+ {{#each total}}   
+<div class="card col-12 mb-3">
+	<div class="row g-1">
+		<div class="col-12">
+		<a item_list{{name}}  {{price}} class="text-uppercase"> {{text}}</a>
+		<a additional_info{{text}}  {{value}} class="text-uppercase"> {{text}}</a>
+		<a total_price{{text}}  {{value}} class="text-uppercase"> {{text}}</a>	
+
+		<div class="btn">
+			<btn  class="btn btn-danger mb-1"> {{button.[0].text}}</btn>
+			<btn  class="btn btn-info"> {{button.[1].text}}</btn>	
+		</div>	
+	</div>    
+ </div> 
+ {{/each}}
+       
+
+
+<div class="row g-5">
+<div class="card col-8">
+	{{#with delivery}}
+		<h3 class="mb-4">{{title}}</h3>
+		{{#each select}}
+		<label class="form label">{{label}}</label>
+		<div class="col-4 row p-3">
+			<select class="form-selact form select mb-2">
+				<option selected>{{plaseholder}}</option>
+					{{#each options}}
+					<option value="{{value}}">{{text}}</option>
+					{{/each}}
+			</select>
+		</div>
+		{{/each}}
+	{{/with}}
+</div>
+</div>
+
+
+      </div>    
+</main>
+
+
+
+
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
