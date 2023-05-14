@@ -1,158 +1,141 @@
 <main>
 
   <p>navigation</p>
-  <button class="btn btn-light " src="https://github.com/">Home</button>
-  <button class="btn btn-light" src="https://www.google.com/"> Contacts</button>
-  <button class="btn btn-light" src="https://www.youtube.com/">Help</button>
-  <button class="btn btn-light text-bg-primary" src="https://nodejs.org/en/">Lets start</button>
+  {{#with navigation}}
+  {{#each links.navigation}}
+  <button class="btn btn-light " src="{{href}}">{{text}}</button>
+  {{/each}}
+  {{#each button}}
+  <button class="btn btn-light text-bg-primary" src="{{href}}">{{text}}</button>
+  {{/each}}
   <br>
-  <p>Welcome to Our Website</p>
+  {{/with}}
+ <hr>
+
+  <h1>{{title}}</h1>
+ {{#with header}}
+ <div>{{description}}</div>
+ {{#each button}}
+<button class="btn btn-light text-bg-info" src="{{link}}">{{text}}</button>
+  {{/each}}
+  {{/with}}
+  <br>
   <hr>
 
+    {{#with city}}
+	<h2>{{title}}</h2>
     <div class="row 12 g-3">
      <section class="col-5 gy-4">
         <div class="card text-br-dark">
-            <img class="card-img-top" src="https://picsum.photos/400/200" alt="New York">
+             {{#each cards.title}}
+            <img class="card-img-top" picture {{srs}}, {{alt}}>
             <div class="card-body">
-                <h5 class="card-title text-bg-primary">New York City</h5>
-                <p class="text-br-secondary">New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park.</p>
-                <a href="https://github.com/" class="btn btn-primary"  src="https://github.com/">Read</a>
+                <h5 class="card-title text-bg-primary">{{title}}</h5>
+                <p class="text-br-secondary">{{description}}</p>
+                <a href={{href}} class="btn btn-primary"  src={{src}}>{{text}}</a>
             </div>
-        </div>
-        <div class="card text-br-dark">
-            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Paris">
-            <div class="card-body">
-                <h5 class="card-title text-bg-primary">Paris</h5>
-                <p class="text-br-end">Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy, and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture, haute couture fashion houses, and designer boutiques along the Rue du Faubourg Saint-Honoré.</p>
-                <a href="https://github.com/" class="btn btn-primary">Read</a>
-            </div>
-        </div>
-        <div class="card text-br-dark">
-            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Tokyo">
-            <div class="card-body">
-                <h5 class="card-title text-bg-primary">Tokyo</h5>
-                <p class="text-br-secondary">Tokyo, Japans bustling capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples. The opulent Meiji Shinto Shrine is known for its towering gate and surrounding woods. The Imperial Palace sits amid large public gardens. The city's many museums offer exhibits ranging from classical art (in the Tokyo National Museum) to a reconstructed kabuki theater (in the Edo-Tokyo Museum).</p>
-                <a href="https://github.com/" class="btn btn-primary">Reac</a>
-            </div>
-        </div>
-        <div class="card text-br-dark">
-            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Sydney">
-            <div class="card-body">
-                <h5 class="card-title text-bg-primary">Sydney</h5>
-                <p class="text-br-secondary">Sydney, capital of New South Wales and one of Australia's largest cities, is best known for its harborfront Opera House, with a distinctive sail-like design. Massive Darling Harbour and the smaller Circular Quay port are hubs of waterside life, with the arched Harbour Bridge and esteemed Royal Botanic Garden nearby. Sydney Tower’s outdoor platform, the Skywalk, offers 360-degree views of the city and suburbs.</p>
-                <a href="https://github.com/" class="btn btn-primary">Reac</a>
-            </div>
+			{{/each}}
         </div>
     </section>
+	{{/with}}
 
-
+<hr>
 
     <br>
     <br>
     <br>
-     <p>winner</p>
+	{{#with winner}}
+     <p>{{title}}</p>
      <table class="table table-striped table-brodered col-5">
-        <thead>
-            <tr>
-                <th>
-                    #
-                </th>
-                <th>
-                    name
-                </th>
-                <th>
-                    surname
-                </th>
-                <th>
-                    nickname
-                </th>
-            </tr>
-        </thead>
+		{{#each table.winner}}
+        <head> {{#}}  {{name}}  {{surname}}  {{nickname}} </head>
 
         <body>
             <tr>
-                <th>1</th>
-                <td>Ada</td>
-                <td>Lovelace</td>
-                <td>The Enchantress of Numbers</td>
-            </tr>
-            <tr>
-                <th>2</th>
-                <td>Grace</td>
-                <td>Hopper</td>
-                <td>Amazing Grace</td>
-            </tr>
-            <tr>
-                <th>3</th>
-                <td>Katherine</td>
-                <td>Johnson</td>
-                <td>The Human Computer</td>
-            </tr>
+                <th>{{place}}</th>
+                <td>{{name}}</td>
+                <td>{{surname}}</td>
+                <td>{{nickname}}</td>
         </body>
      </table>
+	 {{/with}}
 
-         <section class="col-12">
-           gallery
-        </section>
-    </div>
+         <div class="col-12">
+         {{#with gallery}}
+			<h5 class="display-7">{{title}}</h5></div>
+			 <div class="card text-br-pimary row-4">
+             <div class="card-header col-4 pt-3">
+				{{#each cards.gallery}}
+					<ul class="List-group list-group-flush text-br-primary">
+						<li class="List-group-item">
+							<a href="#" class="btn btn-link">{{name}}</a>
+						<ul class="List-group"></ul>
+						</li>
+						<li class="List-group-item">
+							<a href="#" class="btn btn-link">{{items}}</a>
+						</li>
+					</ul>
+				{{/each}}
+			 </div>
+			 </div>
+		  {{/with}}
+		 </div>   
+        
 
     <br>
     <br>
     <br>
 
-      <div class="card text-br-pimary row-4">
-        <div class="card-header col-4 pt-3">
-            <h5 class="display-7">Picture history</h2></div>
-            
-              <ul class="List-group list-group-flush text-br-primary">
-                <li class="List-group-item">
-                    <a href="#" class="btn btn-link">The Mona Lisa</a>
-                <ul class="List-group"></ul>
+      {{#with relaxion}}
+	  <p>title {{title}}</p>
+	   <div class="card text-br-pimary">
+        <div class="card-header col-5">
+	     {{#each cards.relaxion}}
+			<ul class="List-group"></ul>
                 </li>
                 <li class="List-group-item">
-                    <a href="#" class="btn btn-link">Painting,Oil on poplar panel</a>
+                    <a href="#" class="btn btn-link">{{header}}</a>
                 </li>
                 <li class="List-group-item">
-                    <a href="#" class="btn btn-link">1503-1519</a>
+                    <a href="#" class="btn btn-link">{{title}}</a>
+                </li>
+                <li class="List-group-item">
+                    <a href="#" class="btn btn-link">{{description}}</a>
                 </li>
             </ul>
-        <div class="card text-br-pimary">
-        <div class="card-header col-5">
-            <h5 class="display-7">Picture history</h2></div>
+		 {{/each}}
+		</div>
+	   </div>
+	  {{/with}}
+
+	  <div class="card-header col-5">
+		{{#with rest}}
+		   <h3 class="display-7"></h3></div>
+		     {{#each cards.rest}}
               <ul class="List-group list-group-flush text-br-primary">
                 <li class="List-group-item">
-                    <a href="#" class="btn btn-link">The Persistence of Memory</a>
+                    <a href="#" class="btn btn-link">{{header}}</a>
                 <ul class="List-group"></ul>
                 </li>
                 <li class="List-group-item">
-                    <a href="#" class="btn btn-link">Painting</a>
+                    <a href="#" class="btn btn-link">{{title}}</a>
                 </li>
                 <li class="List-group-item">
-                    <a href="#" class="btn btn-link">Oil on poplar panel</a>
+                    <a href="#" class="btn btn-link">{{button}}</a>
                 </li>
                 <li class="List-group-item">
-                    <a href="#" class="btn btn-link">1931</a>
+                    <a href="#" class="btn btn-link">{{footer}}</a>
                 </li>
-            </ul> 
-            <div class="card text-br-pimary">
-        <div class="card-header col-5">
-            <h5 class="display-7">Picture history</h2></div>
-              <ul class="List-group list-group-flush text-br-primary">
-                <li class="List-group-item">
-                    <a href="#" class="btn btn-link">The Starry Nigh</a>
-                <ul class="List-group"></ul>
-                </li>
-                <li class="List-group-item">
-                    <a href="#" class="btn btn-link">Painting,Oil on poplar panel</a>
-                </li>
-                <li class="List-group-item">
-                    <a href="#" class="btn btn-link">1889</a>
-                </li>
-            </ul>    
+            </ul>
+			{{/each}}
+		{{/with}}
+	  </div>
+        
+         
      <br>
      <br>
      <br>
 
-     
+     {{/with}}
     </div>
 </main>
