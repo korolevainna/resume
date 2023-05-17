@@ -2,7 +2,7 @@
 <main  class="p-5">
    {{#with navigation}} 
     <div class="row g-2">
-        <div class="col-6">
+        <div class="col-12">
             <div class="col-6 mb-3">
                <div class="nav nav-tabs">
                  {{#each links}}
@@ -17,95 +17,73 @@
     {{/with}}
 	<hr>
 
+
     <h1>{{header}}</h1>
 	<hr>
 	<div class="row">
-		<div class="col-12">
-    {{#with contacts_data}}
-	  <div class="row">
-     <h2>{{title}}</h2>
+		<div class="col-8">
+    	{{#with contacts_data}}
+     		<h2>{{title}}</h2>
                <div class="btn btn-tabs">
                 {{#each buttons}}
                     <div class="btn btn-warning">
                         <a isPrimary{{isPrimary}} isOutline{{isOutline}} class="text-uppercase"> {{text}}</a>
                     </div>
                 {{/each}}
-                </div>
-         <div class="row"></div>    
-        <div class="col-4 ">
+			  </div>
+
             {{#each form.input}}
-				  <div class="row g-1">
-				   <div class="col-8 mb-2">				
+				   <div class="col-4 mb-2">				
 					<label class="form-label">{{label}}</label>  
 					<select class="form-control form-control-lg"><option>{{placeholder}}</option> </select>
 					<div class="form-text form-select-ln">{{caption}}</div>
-				 </div>	
-				 </div>
+					 </div>	
 			 {{/each}}  
-				</div>
-				</div>
-				 <hr>
+	
 				 {{#each form.switch}}
-				 <div class="col-12 mb-2">
+				 <div class="col-8 mb-2">
 					<div class="form-check form-switch">
 						<label class="form-check-label">{{text}}</label>
 						<input name="{{isActive}}" type="checkbox" class="form-check-input">
 					</div>
 				</div>
 				 {{/each}}   
-         </div>
-     </div>
-	 <hr>
-	 </div>
- {{/with}} 
-</div>
+  		 {{/with}}
+		 </div> 
+	
 
- 
-<div class="col-4">
-<div class="row g-1 "></div>
-	<div class="card col-4 ">
-		<div class="col-12 mb-1">
-		<div class="btn">		
-			<a  class="btn btn-success"> {{action_block.[0].text}}</a>
-			<a  class="btn btn-danger"> {{action_block.[1].text}}</a>
-			<a  class="btn btn-info"> {{action_block.[2].text}}</a>	
-		</div>
-		</div>	
-	</div>    
- </div>
-
-
- <div class="card col-4 mb-3">
-	<div class="row g-1">
-	<div class="col-12">
-     <div class="card-body p-2 pb-1"></div>  
-	<h2 class="card-title">{{total.title}}</h2>   
-	{{#each total.item_list}} 	 
-		<div>{{name}} : {{price}} </div>
-	{{/each}}
-		<hr>	
-	{{#each total.additional_info}}		
-		<div>{{text}} : {{value}} </div>
-	{{/each}}
-	<hr>	
-	{{text.total_price.text}} : {{total.total_price.value}} 
-	<hr>	
-	{{#each total.button}}
-		<div>
-			<div 
-				class="btn  {{#if isPrimary}} btn-primary{{/if}}
-				 {{#if isOutline}} btn-outline-primary {{/if}} mb-2">
+		<div class="col-4">
+			<div class="card p-2 mb-2 mt-3 ">
+				<div class="btn">		
+					<a  class="btn btn-success"> {{action_block.[0].text}}</a>
+					<a  class="btn btn-danger"> {{action_block.[1].text}}</a>
+					<a  class="btn btn-info"> {{action_block.[2].text}}</a>	
+			    </div>
 			</div>
-		</div>	
-    {{/each}}
-  			 </div>	
-		</div>    
-	</div> 
-</div>
-</div>
-       
-
-
+			   
+				<div class="card p-2 pb-1">  
+						<h2 class="card-title">{{total.title}}</h2>   
+						{{#each total.item_list}} 	 
+							<div>{{name}} : {{price}} </div>
+						{{/each}}
+							<hr>	
+						{{#each total.additional_info}}		
+							<div>{{text}} : {{value}} </div>
+						{{/each}}
+						<hr>	
+						{{text.total_price.text}} : {{total.total_price.value}} 
+						<hr>	
+						{{#each total.button}}
+				<div
+					class="btn  {{#if isPrimary}} btn-primary{{/if}}
+					{{#if isOutline}} btn-outline-primary {{/if}} mb-2">{{text}}
+				</div>	
+				   {{/each}} 
+				</div>   
+		</div> 
+	  </div>
+	
+    <br>   
 <div class="row g-5">
 <div class="card col-8">
 	{{#with delivery}}
@@ -121,7 +99,6 @@
 			</select>
 		</div>
 		{{/each}}
-	
 </div>
 </div> 
 
