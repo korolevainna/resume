@@ -1,12 +1,9 @@
-{{!-- 
-Це код container файлу для task21 сторінки, 
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
---}}
+
 <main  class="p-5">
    {{#with navigation}} 
-    <div class="rov g-2">
+    <div class="row g-2">
         <div class="col-6">
-            <div class="col-12 mb-3">
+            <div class="col-6 mb-3">
                <div class="nav nav-tabs">
                  {{#each links}}
                     <div class="nav-item">
@@ -22,13 +19,11 @@
 
     <h1>{{header}}</h1>
 	<hr>
-	<div class="rov">
-		<div class="col-8">
+	<div class="row">
+		<div class="col-12">
     {{#with contacts_data}}
+	  <div class="row">
      <h2>{{title}}</h2>
-        <div class="rov g-6">
-            <div class="col-6">
-             <div class="col-12 mb-3">
                <div class="btn btn-tabs">
                 {{#each buttons}}
                     <div class="btn btn-warning">
@@ -36,22 +31,19 @@
                     </div>
                 {{/each}}
                 </div>
-            </div> 
-          </div> 
-        </div>     
-    
-
-    <div class="row g-8">
+         <div class="row"></div>    
         <div class="col-4 ">
-               <div class="form">
-                  {{#each form.input}}
-				<div class="col-12 mb-2">
+            {{#each form.input}}
+				  <div class="row g-1">
+				   <div class="col-8 mb-2">				
 					<label class="form-label">{{label}}</label>  
 					<select class="form-control form-control-lg"><option>{{placeholder}}</option> </select>
 					<div class="form-text form-select-ln">{{caption}}</div>
 				 </div>	
-				 {{/each}}  
-
+				 </div>
+			 {{/each}}  
+				</div>
+				</div>
 				 <hr>
 				 {{#each form.switch}}
 				 <div class="col-12 mb-2">
@@ -60,11 +52,11 @@
 						<input name="{{isActive}}" type="checkbox" class="form-check-input">
 					</div>
 				</div>
-				 {{/each}}
-              </div>    
+				 {{/each}}   
          </div>
      </div>
 	 <hr>
+	 </div>
  {{/with}} 
 </div>
 
@@ -72,7 +64,7 @@
 <div class="col-4">
 <div class="row g-1 "></div>
 	<div class="card col-4 ">
-		<div class="col-12 mb-3">
+		<div class="col-12 mb-1">
 		<div class="btn">		
 			<a  class="btn btn-success"> {{action_block.[0].text}}</a>
 			<a  class="btn btn-danger"> {{action_block.[1].text}}</a>
