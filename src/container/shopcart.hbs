@@ -29,17 +29,16 @@
         	</div>
 		</div>
      </div>
-   {{/with}}  
-   <hr>
+   {{/with}} 
 
+   <hr>
+   <div class="row">
    <div class="card text br-dark mb-3">
 	  {{#each goodsBlock}}
-	  <div>
-		<div class="row">
-			<div class="col-2">
-		<p class="card body"></p>
-		  <img class="img width: 5px top-col-2" src={{image}}>
-		  </div>
+			<div class="col-4">
+		      <p class="card body"></p>
+		         <img class="img width: 5px top-col-2" src={{image}}>
+		    </div>
 		<div class="col-4 me-6 ms-1">
 			<p>{{name}}</p>
 			<p>{{description}}</p>
@@ -55,9 +54,8 @@
 			<div class="btn col-12 {{#if isPrimary}} btn-primary{{/if}} {{#if isDanger}} btn-danger {{/if}}">{{text}}</div>
 			{{/each}}
 	    </div>
-	   </div>
-	  </div>
 	  {{/each}}
+   </div>
    </div>
    <hr>
 
@@ -76,7 +74,6 @@
 				</div>
         	</div>
 		</div>
-     </div>
    {{/with}}  
    <hr>
 
@@ -103,7 +100,7 @@
 
    <hr>
 
-    <div class="card col-12 text-bg-dark  mb-2"> 
+   <div class="card col-12 text-bg-dark  mb-2"> 
 		{{#with subscribe}}
 		  <h2>{{header}}</h2>
 	          <h5>{{descriptionr}}</h5>
@@ -111,7 +108,6 @@
 				{{#each buttons}}
 	              <div class="btn col-4 mb-2 src={{link}}  btn-primary btn-info">{{text}}</div>
 			   {{/each}}
-	      </div> 
 	  {{/with}}
    </div>
 
