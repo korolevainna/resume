@@ -4,7 +4,7 @@
 --}}
 <main  class="p-5">
    {{#with navigation}} 
-    <div class="rov g-2">
+    <div class="row g-2">
         <div class="col-6">
             <div class="col-12 mb-3">
                <div class="nav nav-tabs">
@@ -20,50 +20,48 @@
     {{/with}}
 	<hr>
 
-
-	<i class="bi bi-5-square-fill 50px"></i>
-
     <h1>{{header}}</h1>
 	<hr>
-	<div class="row">
-		
+	<div class="row">	
     {{#with purchase}}
-	    <div class="nav nav-tabs">
+	    <div class="nav nav-tabs nav-item">
 			<div class="col=12 mb-3">
               <a class="nav-tabs">{{tabs}}</a>
 		  </div>
 		</div>
-	 {{#each actionBlock}}
-        <div class="row">
-            <div class="col-9">
-             <div class="col-12 mb-3">
-               <div class="btn btn-tabs">
-				    <a href="{{placeholder}}" class="nav-link active"></a>
-						
-						<button  class="btn btn-success" {{#if isSuccess}}btn-success{{/if}} class="btn btn-outline"{{#if isOutline}}btn-outline{{/if}} class="btn btn-danger"{{#if isDanger}}btn-danger{{/if}}>{{text}}</button>			   				
+	 {{#with actionBlock}}
+        <div class="row g-2">
+            <div class="col-12">
+				{{#each input}}
+				  <a  class="nav nav-link active">{{placeholder}}</a>
+				 {{/each}}	
+				{{#each  buttons}}
+                <div class="btn btn-tabs">
+				    <div href="{{link}}" class="btn {{#if isSuccess}} btn-success{{/if}}  {{#if isOutline}} btn-outline{{/if}} {{#if isDanger}} btn-danger{{/if}}">{{text}}</div>	   				
                 </div>
+		        {{/each}}
             </div> 
-          </div> 
-        </div>     
-    {{/each}}
-	<br>
+        </div>  
+		  
+    {{/with}}
+	<hr>
 
 	{{#each itemList}}
-      <div class="row">
-		<div class="col-3">
+      <div class="row p-1 my-3 p-1">
+		<div class="col-2">
 		<p>{{number}}</p>
 		<p class="fw-medium text-lowcase">{{status}}</p>
 		</div>
-		<div class="col-2 me-5 ms-1">
+		<div class="col-2">
 			<p>{{amount.title}}</p>
 			<span class="fw-medium">{{amount.value}}</span>
 		</div>
-		<div class="col-4">
+		<div class="col-6">
 			{{#each images}}
 			   <img src="{{this}}"class="img">
 			{{/each}}
 		</div>
-		<div class="col-2 ms-3 mt-4">
+		<div class="col-2">
 			{{#with button}}
 			  {{#if isPrimary}}<a href="{{link}} " class="btn btn-primary">{{text}}</a>{{/if}}
 			{{/with}}
@@ -73,19 +71,46 @@
 	{{/with}}
 	<br>
 
-	{{#with userInfo}}
-	<div class="card">
-	<p>{{title}}</p>
+	{{#with userInfo}}	
+	<h3>{{title}}</h3>
 	<div class="row">
 		<div class="card">
-			{{#each profileData}}
-				<p>{{title}}</p>
-				    
+			<div class="col-12">
+			{{#with profileData}}
+				  <h4>{{title}}</h4>   
+				{{#each fullName}} 	
+				<div class=" card col-3 mb-2">  
+					<select class="form-control form-select-ln"><option>{{title}}</option> </select>
+					<div class="form-text">{{value}}</div>
+				 </div>	
+				{{/each}} 
+				{{#each otherInfo}} 
+				<div class="row">
+				 <div class="card col-3">
+						<select class="form-control"><option>{{title}}</option> </select>
+					   <div class="form-text form-select-ln">{{value}}</div>
+					</div>
+					</div>
+				{{/each}}
+			{{/with}}
+			{{#each buttons}}
+			  <div class="card col-3">
+				<div class="btn btn-tabs">
+				    <div href="{{link}}" class="btn {{#if isPrimary}} btn-primary{{/if}}  {{#if isSecondary}} btn-secondary{{/if}} {{#if isDanger}} btn-danger{{/if}}">{{text}}</div>	   				
+                </div>
+			  </div>
 			{{/each}}
 		</div>
-	</div>
+	  </div>
 	</div>
 	{{/with}}
+	{{#each footer}}
+	   <div class="row">
+		  <div class="tabs">
+				<div href="{{link}}">{{text}}</div>
+		  </div>
+	   </div>
+	{{/each}}
 </main>
 
 

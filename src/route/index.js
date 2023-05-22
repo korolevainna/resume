@@ -1655,7 +1655,7 @@ router.get('/shopprofile', function (req, res) {
 	  header: 'Мої замовлення',
   
 	  purchase: {
-		tabs: ['vsi замовлення', 'Гарантія та повернення'],
+		tabs: ['Всі  замовлення', 'Гарантія та повернення'],
 		actionBlock: {
 		  input: { placeholder: 'Placeholder' },
 		  buttons: [
