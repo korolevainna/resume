@@ -1,0 +1,125 @@
+{{!-- 
+Це код container файлу для task21 сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+<main  class="p-5">
+   {{#with navigation}} 
+    <div class="row g-2">
+        <div class="col-6">
+            <div class="col-12 mb-3">
+               <div class="nav nav-tabs">
+                 {{#each links}}
+                    <div class="nav-item">
+                         <a href={{href}} class="nav-link active"> {{text}} </a>
+                   </div>
+                   {{/each}}     
+                 </div>  
+            </div>
+        </div>
+     </div>    
+    {{/with}}
+	<hr>
+
+    <h1>{{header}}</h1>
+	<hr>
+	<div class="row">	
+    {{#with purchase}}
+	    <div class="nav nav-tabs nav-item">
+			<div class="col=12 mb-3">
+              <a class="nav-tabs">{{tabs}}</a>
+		  </div>
+		</div>
+	 {{#with actionBlock}}
+        <div class="row g-2">
+            <div class="col-12">
+				{{#each input}}
+				  <a  class="nav nav-link active">{{placeholder}}</a>
+				 {{/each}}	
+				{{#each  buttons}}
+                <div class="btn btn-tabs">
+				    <div href="{{link}}" class="btn {{#if isSuccess}} btn-success{{/if}}  {{#if isOutline}} btn-outline{{/if}} {{#if isDanger}} btn-danger{{/if}}">{{text}}</div>	   				
+                </div>
+		        {{/each}}
+            </div> 
+        </div>  
+		  
+    {{/with}}
+	<hr>
+
+	{{#each itemList}}
+      <div class="row p-1 my-3 p-1">
+		<div class="col-2">
+		<p>{{number}}</p>
+		<p class="fw-medium text-lowcase">{{status}}</p>
+		</div>
+		<div class="col-2">
+			<p>{{amount.title}}</p>
+			<span class="fw-medium">{{amount.value}}</span>
+		</div>
+		<div class="col-6">
+			{{#each images}}
+			   <img src="{{this}}"class="img">
+			{{/each}}
+		</div>
+		<div class="col-2">
+			{{#with button}}
+			  {{#if isPrimary}}<a href="{{link}} " class="btn btn-primary">{{text}}</a>{{/if}}
+			{{/with}}
+		</div>
+	  </div>
+	  {{/each}}
+	{{/with}}
+	<br>
+
+	{{#with userInfo}}	
+	<h3>{{title}}</h3>
+	<div class="row">
+		<div class="card">
+			<div class="col-12">
+			{{#with profileData}}
+				  <h4>{{title}}</h4>   
+				{{#each fullName}} 	
+				<div class=" card col-3 mb-2">  
+					<select class="form-control form-select-ln"><option>{{title}}</option> </select>
+					<div class="form-text">{{value}}</div>
+				 </div>	
+				{{/each}} 
+				{{#each otherInfo}} 
+				<div class="row">
+				 <div class="card col-3">
+						<select class="form-control"><option>{{title}}</option> </select>
+					   <div class="form-text form-select-ln">{{value}}</div>
+					</div>
+					</div>
+				{{/each}}
+			{{/with}}
+			{{#each buttons}}
+			  <div class="card col-3">
+				<div class="btn btn-tabs">
+				    <div href="{{link}}" class="btn {{#if isPrimary}} btn-primary{{/if}}  {{#if isSecondary}} btn-secondary{{/if}} {{#if isDanger}} btn-danger{{/if}}">{{text}}</div>	   				
+                </div>
+			  </div>
+			{{/each}}
+		</div>
+	  </div>
+	</div>
+	{{/with}}
+	{{#each footer}}
+	   <div class="row">
+		  <div class="tabs">
+				<div href="{{link}}">{{text}}</div>
+		  </div>
+	   </div>
+	{{/each}}
+</main>
+
+
+
+
+
+
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
