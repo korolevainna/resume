@@ -26,18 +26,22 @@
      		<h2>{{title}}</h2>
                <div class="btn btn-tabs">
                 {{#each buttons}}
-                    <div class="btn btn-warning">
-                        <a isPrimary{{isPrimary}} isOutline{{isOutline}} class="text-uppercase"> {{text}}</a>
+                    <div class="btn  {{#if isPrimary}} btn-primary{{/if}}
+					    {{#if isOutline}} btn-outline-primary {{/if}} mb-2">{{text}}
                     </div>
                 {{/each}}
 			  </div>
 
+
+
             {{#each form.input}}
+			    <div class="row g-3">
 				   <div class="col-4 mb-2">				
-					<label class="form-label">{{label}}</label>  
-					<select class="form-control form-control-lg"><option>{{placeholder}}</option> </select>
-					<div class="form-text form-select-ln">{{caption}}</div>
+						<label class="form-label">{{label}}</label>  
+						<select class="form-control form-control-lg"><option>{{placeholder}}</option> </select>
+						<div class="form-text form-select-ln">{{caption}}</div>
 					 </div>	
+				</div>	 
 			 {{/each}}  
 	
 				 {{#each form.switch}}
@@ -53,12 +57,11 @@
 	
 
 		<div class="col-4">
-			<div class="card p-2 mb-2 mt-3 ">
-				<div class="btn">		
-					<a  class="btn btn-success"> {{action_block.[0].text}}</a>
-					<a  class="btn btn-danger"> {{action_block.[1].text}}</a>
-					<a  class="btn btn-info"> {{action_block.[2].text}}</a>	
+			<div class="card p-2 mb-2">
+				{{#each action_block}}
+				<div class="btn {{#if isSuccess}}btn btn-success{{/if}} {{#if isDanger}}btn btn-danger{{/if}} {{#if isInfo}}btn btn-info{{/if}} mb-2">{{text}}	
 			    </div>
+				{{/each}}
 			</div>
 			   
 				<div class="card p-2 pb-1">  
@@ -90,7 +93,7 @@
 		<h3 class="mb-4">{{title}}</h3>
 		{{#each select}}
 		<label class="form label">{{label}}</label>
-		<div class="col-4 row p-3">
+		<div class="col-4 mb-3">
 			<select class="form-selact form select mb-2">
 				<option selected>{{plaseholder}}</option>
 					{{#each options}}
