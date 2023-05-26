@@ -1,12 +1,12 @@
 <main  class="p-5">
    {{#with navigation}} 
     <div class="row g-2">
-        <div class="col-6">
-            <div class="col-6 mb-3">
+        <div class="col-8">
+            <div class="col-8 mb-3">
                <div class="nav nav-tabs">
                  {{#each links}}
                     <div class="nav-item">
-                         <a href={{href}} class="nav-link active">{{text}} </a>
+                         <a href={{href}} class="nav-link active"> {{text}} </a>
                    </div>
                    {{/each}}     
                  </div>  
@@ -16,44 +16,48 @@
     {{/with}}
 	<hr>
 
-    {{#with formBlock}} 
-    <h1>{{header}}</h1>
+    
 	<hr>
 	<div class="row">
 		<div class="col-8">
-			{{#each rating}}
-				<h2>{{title}}</h2>
-				<h4>{{value}}</h4>
-			{{/each}}
-                {{#each actionBlock}}
+			<h1>{{header}}</h1>
+		{{#with formBlock}} 
+		        {{#each rating}}
+					<div>{{title.rating}} : {{value.rating}}</div>
+				{{/each}}
                     <div class="nav nav-tabs">
-                        <a  class="text-uppercase"> {{text}}</a>
-                    </div>
-                {{/each}}   
-  
-                  {{#each report}}
-				  <p>{{title}}</p>
-				  
-				<div class="btn">
-					<a class="btn" href="{{link}}">{{text}}</a>
-				 </div>
-				 {{/each}}  
+						{{#each actionBlock}}
+							<div class="nav-item">
+								<a  class="nav-link active"> {{text}} </a>
+							</div>
+					</div>
 
-				 <hr>
-				 {{#each feedbackBlock}}
-					<p>{{title}}</p>
+						<p>{{title}}</p>
+						<div class="card">
+								{{#each report}} 
+									<div class="btn">
+										<a class="btn btn-outline-primary" {{#if isActive}}true{{/if}} href="{{link}}">{{text}}</a>
+									</div>
+								{{/each}}
+						 </div>  
+
+				<p>{{title}}</p>
+			{{#each feedbackBlock}}
 					<div class="btn">
 						 <div href="{{link}}" class="btn {{#if isWarning}} btn-warning{{/if}}  {{#if isSuccess}} btn-success{{/if}} {{#if isDanger}} btn-danger{{/if}}">{{text}}</div>
 					</div>
-				 {{/each}}
+			{{/each}}
+			{{/each}}
 		</div>
+	
+
 		<div class="col-4">
 			{{#each goodsInfo}}
 			<div class="card p-2 ph-3">  
 				<div class="img">{{photo}}</div>   
 					 
 					<div>{{name}} : {{price}} </div>
-				
+			
 					<hr>	
 				{{#each total.additional_info}}		
 					<div>{{text}} : {{value}} </div>
@@ -67,54 +71,54 @@
 							{{#if isOutline}} btn-outline-primary {{/if}} mb-2">{{text}}
 						</div>
 				{{/each}}
-				</div>    
-			{{/each}}
+				</div>
+			{{/each}}    
 		</div>
-	</div>
-    {{/with}} 
+       {{/with}} 
+	 </div>
  
 
-	<div class="col-4 mb-2">
-		<div class="card">
-			<div class="btn">		
-				<a  class="btn btn-success"> {{action_block.[0].text}}</a>
-				<a  class="btn btn-danger"> {{action_block.[1].text}}</a>
-				<a  class="btn btn-info"> {{action_block.[2].text}}</a>	
-			</div>	
-		</div>    
+{{#each reviewList}}
+ <div class="card my-2">
+	<div class="card-body">
+		<strong>{{title.userName}}</strong>
+		<p>{{title.caption}}</p>
+		<p>{{title.date}}</p>
+		<hr>
+		{{#with reviewBody}}
+		  {{seller.title}}
+		  {{seller.value}}
+		  <br>
+		  {{rating.title}}
+		  {{rating.value}}
+		  <br>
+		  {{#with text}}
+		  {{this}}
+		  {{/with}}
+		  <br>
+		  <strong>{{advantages.title}}</strong>
+		  <p>{{advantages.text}}</p>
+		  <br>
+		  <strong>{{disadvantages.title}}</strong>
+		  <p>{{disadvantages.text}}</p>
+		  {{#each images}}
+		      <img class="col-2" src="{{images.[0]}}">
+		  {{/each}}
+		  <div class="card">
+				{{#with coments}}
+				  <p>{{userName}}</p>
+				  <p>{{date}}</p>
+				  <p>{{text}}</p>
+				{{/with}}
+		  </div>
+
+		{{/with}}
+	</div>
+ </div>
+{{/each}}
+
 
 	
-	</div> 
-    </div>
-  
-       
-
-
-<div class="row g-5">
-<div class="card col-8">
-	{{#with delivery}}
-		<h3 class="mb-4">{{title}}</h3>
-		{{#each select}}
-		<label class="form label">{{label}}</label>
-		<div class="col-4 row p-3">
-			<select class="form-selact form select mb-2">
-				<option selected>{{plaseholder}}</option>
-					{{#each options}}
-					<option value="{{value}}">{{text}}</option>
-					{{/each}}
-			</select>
-		</div>
-		{{/each}}
-		{{#each delivery_type}}
-		<div class="form-check">
-			<label class="form-check-label">{{type}}</label>
-			<input name="form" type="radio" class="form-check-input">
-		</div>
-		{{/each}}
-    {{/with}}
-</div>
-</div>
-
   <hr>
   {{#with payment}}
   <h1>{{title}}</h1>
@@ -127,7 +131,6 @@
   {{/with}}
 
 </div> 
-
 </main>
 
 
