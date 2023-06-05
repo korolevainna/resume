@@ -50,33 +50,38 @@
 {{#with filterBlock}}
 	<div class="card col-4">			
         {{#each sellers.list}}
-				  <p>{{title}}</p>
-				    <label class="form-check-label">{{option.[0].value}}</label>
-					<input name="food" type="checkbox" class="form-check-input">	
+			<p>{{title}}</p>
+			<label class="form-check-label">{{option.[0].value}}</label>
+			<input name="food" type="checkbox" class="form-check-input">	
 		{{/each}}  
 
-		 {{#each brands}}
-		   <p>{{title}}</p>
-				 <div class="col-8 mb-2">
-					<div class="form-check form-switch">
-						<label class="form-check-label">{{option.value}}</label>
-						<input name="food" type="checkbox" class="form-check-input">
-					</div>
+		 {{#with brands}}
+			<p class="mb-2">{{title}}</p>
+			<div class="mb-3">
+				<input type="text" class="form-control" placeholder="{{input.placeholder}}">
+			</div>
+			<div class="form-check">
+				{{#each options}}
+				<div class="mb-2">
+					<label class="form-check-label">{{value}}</label>
+					<input class="form-check-input" name="quiz" type="checkbox">
 				</div>
-		 {{/each}}
+				{{/each}}
+			</div>
+         {{/with}}
 
-		{{#each price}}
-           <p>{{title}}</p>
-		   <input class="form-control">
-		   <br>
-		   <input class="form-control">
-		   <br>
-		   <btn class="btn btn-outline-dark" href="{{button.link}}">{{button.text}}</btn>
-		{{/each}}
+		  {{#with price}}
+				<p class="mb-2">{{title}}</p>
+				<div class="mb-3">
+					<input type="text" class="form-control mb-3" placeholder="{{range.from}}">
+					<input type="text" class="form-control" placeholder="{{range.to}}">
+				</div>
+				<button class="btn btn-outline-secondary px-3 btn-sm">{{button.text}}</button>
+         {{/with}}
 
 
 		{{#each filterList}}
-			<p>{{title}}</p>
+			<p class="mb-2">{{title}}</p>
 			<div class="form-check">
 				{{#each options}} 
 					<label class="form-check-label">{{this}}</label>
@@ -85,7 +90,8 @@
 			</div>
 		{{/each}}
 		</div>
-{{/with}}
+ {{/with}}
+
 
 
 
@@ -122,19 +128,25 @@
 
 
   <hr>
-   <div class="row">
-	<div class="col-12 mb-4">
-  {{#with service}}
-  <h1>{{title}}</h1>
-  <p>{{description}}</p>
-  {{#each button}}
-     <button class="btn btn-primary">
-        <span class="text-uppercase"> button primary</span>
-    </button>
-  {{/each}}
-  {{/with}}
-	</div>
-   </div>
+   <section>
+        <div class="container">
+            {{#with service}}
+            <div class="row pt-5 mb-4">
+                <div class="col-12">
+                    <div class="card text-bg-success text-center">
+                        <div class="card-body">
+                            <h2 class="card-title">{{title}}</h2>
+                            <p>{{description}}</p>
+                            {{#with buttons.[0]}}
+                            <a class="btn btn-primary" href="{{link}}">{{text}}</a>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/with}}
+        </div>
+    </section>
 
 
 
@@ -152,54 +164,8 @@
 
 
 
-<main>
-    <div class="row gy-5">
-    
-
-    </div>
-
-    <br>
-    <br>
-    <br>
 
 
-   
-     {{#with  footer}}
-     <table class="table table-striped table-brodered text-bg-success">
-         <a href="{{link}}">{{text}}</a>
-     </table>
-	 {{/with}}
-
-     <br>
-     <br>
-     <br>
-
-</main>
-
-<main class="p-5">
-    <div class="rov g-2">
-        <div class="col-4">
-        
-
-
-
-        <div class="col-7">
-            <div class="row">
-                
-
-                <div class="col-12">
-                     <button class="btn btn-primary rounded-pill mi-3">Click me</button>
-
-                    <div class="alert alert-dark">
-                        <h6 class="m-0">
-                            Hello world<span class="badge text-bg-warning rounded-pill text-uppercose">Top prodag</span>
-                        </h6>
-                    </div>  
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
 
 
 
