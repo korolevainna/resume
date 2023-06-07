@@ -7,7 +7,7 @@
                <div class="nav nav-tabs">
                  {{#each links}}
                     <div class="nav-item">
-                         <a href={{href}} class="nav-link active"> {{text}} </a>
+                         <a href={{href}} class="nav-link active">{{text}} </a>
                    </div>
                    {{/each}}     
                  </div>  
@@ -17,41 +17,63 @@
     {{/with}}
 	<hr>
 
+    {{#with formBlock}} 
     <h1>{{header}}</h1>
 	<hr>
 	<div class="row">
 		<div class="col-8">
-    {{#with contacts_data}}
-         <h2>{{title}}</h2>
-               <div class="btn btn-tabs">
-                {{#each buttons}}
-                    <div class="btn btn-warning">
-                        <a isPrimary{{isPrimary}} isOutline{{isOutline}} class="text-uppercase"> {{text}}</a>
+			{{#each rating}}
+				<h2>{{title}}</h2>
+				<h4>{{value}}</h4>
+			{{/each}}
+                {{#each actionBlock}}
+                    <div class="nav nav-tabs">
+                        <a  class="text-uppercase"> {{text}}</a>
                     </div>
-                {{/each}}
-                </div>    
+                {{/each}}   
   
-                  {{#each form.input}}
-				  <div class="row">
-				<div class="col-4 mb-2">
-					<label class="form-label">{{label}}</label>  
-					<select class="form-control form-control-lg"><option>{{placeholder}}</option> </select>
-					<div class="form-text form-select-ln">{{caption}}</div>
-				 </div>	
+                  {{#each report}}
+				  <p>{{title}}</p>
+				  
+				<div class="btn">
+					<a class="btn" href="{{link}}">{{text}}</a>
 				 </div>
 				 {{/each}}  
 
 				 <hr>
-				 {{#each form.switch}}
-				 <div class="col-8 mb-2">
-					<div class="form-check form-switch">
-						<label class="form-check-label">{{text}}</label>
-						<input name="{{isActive}}" type="checkbox" class="form-check-input">
+				 {{#each feedbackBlock}}
+					<p>{{title}}</p>
+					<div class="btn">
+						 <div href="{{link}}" class="btn {{#if isWarning}} btn-warning{{/if}}  {{#if isSuccess}} btn-success{{/if}} {{#if isDanger}} btn-danger{{/if}}">{{text}}</div>
 					</div>
-				</div>
 				 {{/each}}
-          {{/with}} 
-     </div>
+		</div>
+		<div class="col-4">
+			{{#each goodsInfo}}
+			<div class="card p-2 ph-3">  
+				<h2 class="card-title">{{total.title}}</h2>   
+				{{#each total.item_list}} 	 
+					<div>{{name}} : {{price}} </div>
+				{{/each}}
+					<hr>	
+				{{#each total.additional_info}}		
+					<div>{{text}} : {{value}} </div>
+				{{/each}}
+				<hr>	
+				{{text.total_price.text}} : {{total.total_price.value}} 
+				<hr>	
+				{{#each total.button}}
+						<div 
+							class="btn  {{#if isPrimary}} btn-primary{{/if}}
+							{{#if isOutline}} btn-outline-primary {{/if}} mb-2">{{text}}
+						</div>
+				{{/each}}
+				</div>    
+			{{/each}}
+		</div>
+	</div>
+    {{/with}} 
+ 
 
 	<div class="col-4 mb-2">
 		<div class="card">
@@ -62,28 +84,10 @@
 			</div>	
 		</div>    
 
-	<div class="card p-2 ph-3">  
-		<h2 class="card-title">{{total.title}}</h2>   
-		{{#each total.item_list}} 	 
-			<div>{{name}} : {{price}} </div>
-		{{/each}}
-			<hr>	
-		{{#each total.additional_info}}		
-			<div>{{text}} : {{value}} </div>
-		{{/each}}
-		<hr>	
-		{{text.total_price.text}} : {{total.total_price.value}} 
-		<hr>	
-		{{#each total.button}}
-				<div 
-					class="btn  {{#if isPrimary}} btn-primary{{/if}}
-					{{#if isOutline}} btn-outline-primary {{/if}} mb-2">{{text}}
-				</div>
-		{{/each}}
-		</div>    
+	
 	</div> 
-</div>
-
+    </div>
+  
        
 
 
