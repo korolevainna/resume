@@ -3,32 +3,31 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="row-2">
     {{> title data="My program"}}
         <ul>
             {{#each program}}
-              <li>
+              <li class="col-4">
                  {{#with excurcion}}{{/with}} 
                      <h1> excursion: {{excursion}}</h1>                
                         <p>name: {{name}}</p>
 
-                        <br>
+
                       <h2>location</h2>
                        {{#with location}} 
                         <p> {{city}}, {{country}}</p>
                         {{/with}}
-                     <br>
+
 
                      <p>date: {{date}}</p>
-                       <br>
+           
                      <h2>program</h2>
                        {{#each program}}
                         <p> name: {{ name }}</p>
                         <p>type: {{type}}</p>
                         <p> duration: {{ duration }}</p>
                         {{/each}}
-                        <br>
-
+                 
                         <h2>details</h2>
                         {{#each details}}
                          <p>{{museum}}{{guide}}</p>
@@ -62,7 +61,7 @@
       </ul>
 </div>
 
-<div>
+<div class="col-4 mb-2">
     <h1>{{program.excurcion.name}}</h1>
     <p>location: {{program.excurcion.location.city}},
     {{program.excurcion.location.country}}</p>
@@ -72,8 +71,6 @@
     <p>Type: {{program.excurcion.program.[0].type}}</p>
     <p> Duration: {{program.excurcion.program.[0].duration}} hours</p>
     <p>details:</p>
-  
-
 </div>
 
 

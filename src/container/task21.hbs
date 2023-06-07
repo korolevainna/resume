@@ -2,9 +2,9 @@
 Це код container файлу для task21 сторінки, 
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
-<div>
+<div class="row-2">
       <main>
-        <section>
+        <section class="col-12 mb-4">
             {{> title data="My heading" big=true}}
             <h1>heading</h1>
               <p>title: {{title}}</p>
@@ -15,7 +15,7 @@
               <button type="button" class="btn btn-outline-primary">Add to cart</button>
               {{/each}}
 
-              <hr>
+              
               <h2>second</h2>
                 <p>title: {{title}}</p>
                 <p>text: {{text}}</p>
@@ -29,7 +29,7 @@
                    <button type="button" class="btn btn-dark">Open page</button>
                    <button type="button" class="btn btn-outline-dark">Add to cart</button>
         </section> 
-        <section>
+        <section class="col-12" mb-5>
             <br>
             <h1>nested_display</h1>
                <p>title: {{title}}</p>
@@ -42,7 +42,7 @@
                 {{/each}}
         </section>
 
-        <section>
+        <section class="col-12">
             <p>paragraph</p>
             {{#each paragraph}}
               <p>title: {{title:}}</p>
