@@ -1,45 +1,71 @@
-{{!-- 
-Це код container файлу для education сторінки, 
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
---}}
+<section class="row-2">
+  {{#each users}}
+  <hr>
+  <figure class='text-center col-12 mb-4'>
+    <blockquote class='blockquote'>
+      <h2>{{name}}</h2>
 
-<div>   
-    <main>
-            <section>
-                {{> title data="My facebook" big=true}}
-                <h1>name: {{name}}</h1>
-                <ul>
-                      {{#each users}}
-                        <li>
-                            {{id}}
-                            {{name}}
-                            {{gender}}
-                            {{age}}
-                            {{friends}}
-                        </li>
-                    {{/each}}      
-                </ul>
-                <ul>
-                    {{#each friends}}
-                    <p>friends: {{id}}{{name}}{{gender}}{{age}}{{mutual_friends}}</p>
-                     {{/each}}
-                </ul>
-            </section>
+      <figcaption class='blockquote-footer'>
+        <p>{{gender}}, {{age}} years old</p>
+      </figcaption>
+  </figure>
+  <hr>
+  <figure>
+    <blockquote class="blockquote">
+      <h5>Friends & mutual_friends:</h5>
+    </blockquote>
 
-            <sektion>
-                {{> title data="My certificates"}}
-                <ul>
-                    {{#each certificates}}
-                     <li>
-                       <p>certificates: {{this}}( {{id}} )</p>
-                     </li>
-                    {{/each}} 
-                </ul>
-            </sektion>
-    </main>
-</div>
+    <figcaption class="blockquote-footer">
+      <ul>
+        {{#each friends}}
+        <li><b>{{name}}</b> ({{gender}}, {{age}} years old)</li>
+        {{#if mutual_friends}}
+        <ul>
+          {{#each mutual_friends}}
+          <li>{{name}}
+            ({{gender}},
+            {{age}}
+            years old)</li>
+          {{#if mutual_friends}}
+          <ul>
+            {{#each mutual_friends}}
+            <li>{{name}}
+              ({{gender}},
+              {{age}}
+              years old)</li>
+            {{/each}}
+          </ul>
+          {{/if}}
+          {{/each}}
+        </ul>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </figcaption>
+  </figure>
 
-{{!-- 
-    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-    Адже наш layout/default.hbs має вже структуру HTML
---}}
+  <figure>
+    <blockquote class="blockquote">
+      <h5>Groups & members:</h5>
+    </blockquote>
+
+    <figcaption class="blockquote-footer col-5">
+      <ul>
+        {{#each groups}}
+        <li>{{name}} - {{description}}</li>
+        {{#if members}}
+        <ul>
+          {{#each members}}
+          <li><b>{{name}}</b>
+            ({{gender}},
+            {{age}}
+            years old)</li>
+          {{/each}}
+        </ul>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </figcaption>
+  </figure>
+  {{/each}}
+</section>
