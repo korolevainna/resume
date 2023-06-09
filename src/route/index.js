@@ -907,7 +907,6 @@ router.get('/facebook', function (req, res) {
       },
     ],
   })
-  res.render('index', {facebook})
   //                  ↑↑ сюди вводимо JSON дані
 })
 
