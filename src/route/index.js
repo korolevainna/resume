@@ -752,7 +752,7 @@ router.get('bootstrap', function (req, res) {
 // ===============================================================
 // router.get Створює нам один ентпоїнт
 
-router.get('/facebook', function (req, res) {
+router.get('facebook', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
